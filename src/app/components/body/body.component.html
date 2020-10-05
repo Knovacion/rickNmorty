@@ -1,0 +1,25 @@
+<mat-accordion>
+    <mat-expansion-panel *ngFor="let pj of listadoPj" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title  >
+            <p>{{pj.name}}</p>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-card style="align-items: center;"[ngClass]="{'Man':pj.gender=='Male','Fem':pj.gender=='Female'}">
+        <mat-card-header>
+          <img mat-card-image class="Avatar"src="{{pj.image}}" alt="Photo {{pj.name}}">
+        </mat-card-header>
+        <mat-card-content >         
+             <mat-card-title><strong> {{pj.name}}</strong></mat-card-title>
+             <mat-card-subtitle><strong>Origen: </strong>  {{pj.origin.name}}</mat-card-subtitle>
+             <mat-card-subtitle><strong>Especie: </strong>{{pj.species}}</mat-card-subtitle>
+             <mat-card-subtitle><strong>Creado: </strong>{{pj.created}}</mat-card-subtitle>
+             <p *ngIf="pj.status == 'Alive' else Dead" style="color: green;"><strong>Estado: </strong>{{pj.status}}</p>
+             <ng-template #Dead><p style="color: red;"><strong>Estado: </strong>{{pj.status}}</p> </ng-template>
+        </mat-card-content>
+      </mat-card>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+ 
+  
