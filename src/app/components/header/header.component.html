@@ -1,4 +1,7 @@
-<mat-toolbar color="primary">
-      <span>Rick & Morty </span>
+<mat-toolbar color="primary" class="mat-elevation-z8">
+      <span>Rick & Morty  </span>
     <span class="example-spacer"></span>
+    <span style="margin-left: 50%;"><strong>Personaje Anterior visto: {{personaje}}</strong></span>
   </mat-toolbar>
+  <app-body (selEmmit)="getSeleccionado($event)"></app-body>
+  <app-footer></app-footer>
